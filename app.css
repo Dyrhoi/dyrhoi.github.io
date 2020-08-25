@@ -49,6 +49,7 @@ header {
     border-bottom:6px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(145deg, #baff2c 20%,  #13a2da ,#da13a7,  #baff2c 80%);
+    padding:120px 0;
 }
 
 .content {
@@ -119,8 +120,8 @@ p.status.available:before {
     background-color:#72e028;
 }
 
-section, header {
-    padding:10em 0;
+section {
+    padding:215px 0;
 }
 
 
@@ -137,5 +138,21 @@ section, header {
 @keyframes gradient {
     to {
         background-position: 200% center;
+    }
+}
+
+@media screen and (max-width: 1054px) {
+    h1 {
+        font-size:9vw;
+    }
+
+    p.status {
+        font-size:2.5vw;
+    }
+
+    p.status:before {
+        height:2.5vw;
+        width: 2.5vw;
+        margin-right:calc(2.5vw);
     }
 }
