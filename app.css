@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons+Round");
+
 * {
     box-sizing: border-box;
     margin:0;
@@ -101,23 +104,23 @@ p .bold {
     font-weight:700;  
 }
 
-p.status:before {
+p.status i {
     content:"";
     display:inline-block;
     vertical-align: middle;
-    width:26px;
-    height:26px;
-    background-color:white;
     border-radius:100%;
     margin-right:15px;
+    font-size:30px;
 }
 
-p.status.busy:before {
-    background-color:#e02831;
+p.status.busy i:before {
+    color:#e02831;
+    content:"schedule";
 }
 
-p.status.available:before {
-    background-color:#72e028;
+p.status.available i:before {
+    color:#72e028;
+    content:"done";
 }
 
 section {
@@ -149,11 +152,11 @@ section {
         font-size:calc(30px + 9vw);
     }
 
-    p.status {
+    p.status, p.status i {
         font-size:calc(16px + 1.2vw);
     }
 
-    p.status:before {
+    p.status i {
         display:none;
     }
 }
