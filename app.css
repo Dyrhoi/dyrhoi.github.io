@@ -4,7 +4,8 @@
 
 :root {
     --main-gradient: linear-gradient(45deg, #ff627a 20%, #ffd373, #69ffdf, #ab61ff, #ff627a 80%);
-    --main-purple: #da13a7;
+    --main-primary-color: #ff627a;
+    --main-accent-color: #69ffdf;
     --main-text-color: #000;
 }
 
@@ -47,7 +48,7 @@ html,body {
 
 .top-nav .links li a:hover {
     text-decoration:underline;
-    text-decoration-color:#baff2c;
+    text-decoration-color:var(--main-accent-color);
 }
 
 header {
