@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Material+Icons+Round");
 
 :root {
@@ -81,8 +81,9 @@ header .content {
 	z-index: 5;
 }
 
-#aboutMe {
+#about-me {
 	background-color: white;
+	padding-bottom: 800px;
 }
 
 h1 {
@@ -118,6 +119,11 @@ h2 {
 	color: var(--main-text-color);
 	font-size: 72px;
 	font-weight: 600;
+}
+
+.light h2,
+.light p {
+	color: white;
 }
 
 p {
@@ -170,7 +176,7 @@ p.status.available i:before {
 
 .cool-image {
 	position: absolute;
-	width: 100%;
+	width: calc(100% - 60px);
 	height: 750px;
 	transform: translate(0, -50%);
 	margin-top: 50%;
@@ -190,6 +196,21 @@ p.status.available i:before {
 	box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	align-items: center;
+}
+
+.cool-image .child.i1 {
+	bottom: -60px;
+	right: 10%;
+}
+
+.cool-image .child.i2 {
+	top: 70px;
+	right: -70px;
+}
+
+.cool-image .child.i3 {
+	top: 40%;
+	left: -140px;
 }
 
 .cool-image .child:after {
@@ -238,19 +259,43 @@ p.status.available i:before {
 	padding-left: 0.3em;
 }
 
-.content {
-	display: flex;
-	max-width: 1300px;
-	margin: 0 auto;
-	flex-direction: column;
-	width: 98%;
-	height: 100%;
+.cool-button {
+	font-size: 18px;
+	background-color: white;
+	color: var(--main-text-color);
+	text-decoration: none;
+	padding: 1em 4em;
+	border-radius: 2px;
+	text-transform: uppercase;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	transition: color 0.2s, background-color 0.2s;
 }
 
-section,
-footer {
-	padding: 400px 0;
-	/*min-height: 100vh;*/
+.cool-button:before {
+	content: "";
+	background: var(--main-gradient);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	transition: all 0.2s;
+	animation: gradient 4s linear infinite;
+	background-size: 200% auto;
+}
+
+.cool-button:hover {
+	background-color: black;
+	color: white;
+}
+
+.cool-button:hover:before {
+	width: calc(100% + 6px);
+	height: calc(100% + 6px);
+	transform: translate(-3px, -3px);
 }
 
 section:last-of-type {
@@ -269,6 +314,31 @@ footer {
 	bottom: 0;
 }
 
+.content {
+	display: flex;
+	max-width: 1350px;
+	margin: 0 auto;
+	flex-direction: column;
+	width: 95%;
+	height: 100%;
+}
+
+section,
+footer {
+	padding: 400px 0;
+	/*min-height: 100vh;*/
+}
+
+.email-button-container {
+	text-align: center;
+}
+
+.email-button-container span {
+	display: block;
+	font-size: 14px;
+	margin-top: 1em;
+}
+
 .row {
 	display: flex;
 }
@@ -282,15 +352,24 @@ footer {
 }
 
 .row.w3 .item {
-	width: 33.33%;
+	width: 33%;
 }
 
 .row.w3 .item.s2 {
-	width: 66.66%;
+	flex: 1;
+}
+
+.row .item.has-image {
+	width: 450px;
 }
 
 .pr-65 {
 	padding-right: 65px;
+}
+
+.t-center {
+	display: flex;
+	align-items: center;
 }
 
 @keyframes gradient {
@@ -313,6 +392,59 @@ footer {
 	}
 
 	p.status i {
+		display: none;
+	}
+
+	.row {
+		flex-direction: column;
+	}
+
+	.row .item {
+		width: 100% !important;
+	}
+
+	.row .item:last-of-type {
+		order: -1;
+	}
+
+	.cool-image {
+		width: 214px;
+		height: 214px;
+		position: relative;
+		margin: 0 auto;
+	}
+
+	.cool-image .child .text {
+		font-size: 14px;
+	}
+
+	.cool-image .child.i1 {
+		bottom: -60px;
+		right: -100px;
+	}
+
+	.cool-image .child.i2 {
+		top: -30px;
+		right: -160px;
+	}
+
+	.cool-image .child.i3 {
+		top: 20%;
+		left: -190px;
+	}
+
+	.pr-65 {
+		padding: 0;
+	}
+
+	#about-me {
+		padding-top: 160px;
+		padding-bottom: 400px;
+	}
+}
+
+@media screen and (max-width: 620px) {
+	.parallax-wrapper .child {
 		display: none;
 	}
 }
