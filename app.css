@@ -159,7 +159,7 @@ p.status i {
 }
 
 p.status.busy i:before {
-	color: #e02831;
+	color: #ff627a;
 	content: "schedule";
 }
 
@@ -358,6 +358,7 @@ footer {
 	height: 100%;
 	clip-path: url(#backgroundclip);
 	object-fit: cover;
+	overflow: hidden;
 }
 
 .parallax-wrapper .child {
@@ -371,6 +372,7 @@ footer {
 	width: 100%;
 	height: 100%;
 	font-size: 15px;
+	overflow: hidden;
 
 	/* WHY IS THIS NEEDED ?*/
 	margin-top: -16px;

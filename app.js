@@ -56,7 +56,7 @@ gsap.ticker.add(() => {
 	bgYSet(pos.y);
 });
 
-document.addEventListener("mousemove", (e) => {
+document.querySelector("header").addEventListener("mousemove", (e) => {
 	mouse.x = e.x;
 	mouse.y = e.y;
 });
@@ -124,11 +124,16 @@ Array.prototype.forEach.call(
 				/*.addIndicators({
 					colorTrigger: "black",
 					colorStart: "black",
-					colorEnd: "black",
+					colorEnd: "white",
 					indent: 10,
                 })
                 */
-				.setClassToggle(".cool-image", "active")
+				.on("start", (e) => {
+					if (e.scrollDirection == "FORWARD")
+						el.classList.add("active");
+					else if (e.scrollDirection == "REVERSE")
+						el.classList.remove("active");
+				})
 				.addTo(controller);
 		});
 	}
