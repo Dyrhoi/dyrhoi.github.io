@@ -23,8 +23,23 @@ Default values.
 
 gsap.set(cursor, { xPercent: -50, yPercent: -50 });
 gsap.set(backgroundClipPath, { xPercent: -50, yPercent: -50 });
-gsap.set("section:last-of-type", {
-	marginBottom: document.querySelector("footer").clientHeight,
+if (isMobile()) {
+	gsap.set("section:last-of-type", {
+		marginBottom: document.querySelector("footer").clientHeight,
+	});
+}
+
+window.addEventListener("resize", (e) => {
+	console.log("hello");
+	if (!isMobile()) {
+		gsap.set("section:last-of-type", {
+			marginBottom: 0,
+		});
+	} else {
+		gsap.set("section:last-of-type", {
+			marginBottom: document.querySelector("footer").clientHeight,
+		});
+	}
 });
 
 /*

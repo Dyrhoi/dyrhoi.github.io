@@ -441,6 +441,17 @@ footer {
 		padding-top: 160px;
 		padding-bottom: 400px;
 	}
+	section:last-of-type {
+		position: relative;
+		z-index: 2;
+		border-bottom: 6px solid;
+		border-image-slice: 1;
+		border-image-source: var(--main-gradient);
+	}
+
+	footer {
+		position: relative;
+	}
 }
 
 @media screen and (max-width: 620px) {
