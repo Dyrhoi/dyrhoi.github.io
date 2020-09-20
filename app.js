@@ -23,15 +23,14 @@ Default values.
 
 gsap.set(cursor, { xPercent: -50, yPercent: -50 });
 gsap.set(backgroundClipPath, { xPercent: -50, yPercent: -50 });
-if (isMobile()) {
+if (!isMobile()) {
 	gsap.set("section:last-of-type", {
 		marginBottom: document.querySelector("footer").clientHeight,
 	});
 }
 
 window.addEventListener("resize", (e) => {
-	console.log("hello");
-	if (!isMobile()) {
+	if (isMobile()) {
 		gsap.set("section:last-of-type", {
 			marginBottom: 0,
 		});
@@ -77,7 +76,7 @@ document.querySelector("header").addEventListener("mousemove", (e) => {
 });
 
 cooltext.addEventListener("mouseover", (e) => {
-	if (isMobile()) {
+	if (!isMobile()) {
 		if (tween != null) tween.kill();
 		//if(tweenMove != null) tween.kill();
 		tween = gsap.to(backgroundClipPathCircle, 0.3, {
@@ -163,7 +162,7 @@ Other functions
 */
 
 function isMobile() {
-	return window.innerWidth > 1024;
+	return window.innerWidth <= 1024;
 }
 
 var ageTexts = document.getElementsByClassName("age-calc");
