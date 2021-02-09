@@ -83,6 +83,7 @@ header .content {
 
 #about-me {
 	background-color: white;
+	padding-bottom: 800px;
 }
 
 h1 {
@@ -269,7 +270,7 @@ p.status.available i:before {
 	font-weight: 600;
 	display: inline-block;
 	position: relative;
-	transition: color 0.2s, background-color 0.2s;
+    transition: color 0.2s, background-color 0.2s;
 }
 
 .cool-button:before {
@@ -283,7 +284,7 @@ p.status.available i:before {
 	z-index: -1;
 	transition: all 0.2s;
 	animation: gradient 4s linear infinite;
-	background-size: 200% auto;
+    background-size: 200% auto;
 }
 
 .cool-button:hover {
@@ -306,7 +307,9 @@ section:last-of-type {
 }
 
 footer {
-	background-color: black;
+    background-color: black;
+    position: relative;
+    z-index:-1;
 }
 
 .content {
