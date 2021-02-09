@@ -83,7 +83,6 @@ header .content {
 
 #about-me {
 	background-color: white;
-	padding-bottom: 800px;
 }
 
 h1 {
@@ -308,10 +307,6 @@ section:last-of-type {
 
 footer {
 	background-color: black;
-	position: fixed;
-	width: 100%;
-	z-index: -1;
-	bottom: 0;
 }
 
 .content {
